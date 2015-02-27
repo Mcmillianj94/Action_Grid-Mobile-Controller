@@ -15,6 +15,7 @@
     ActionGrid* actionGrid = [[ActionGrid alloc] initWithScene:self actionSpaceColors:nil actionSpaceSize:50.0f];
     actionGrid.position = CGPointMake(self.size.width/2, self.size.height/2);
     [self addChild:actionGrid];
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

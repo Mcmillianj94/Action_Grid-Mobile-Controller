@@ -126,12 +126,12 @@
     CGPoint location = [touch locationInNode:self];
     SKNode* node = [self nodeAtPoint:location];
     
-    //NSLog(@"%@", node.name);
-    if (node.name != nil) {
-        SKShapeNode* convertNode = (SKShapeNode*)node;
-        convertNode.fillColor = [UIColor redColor];
-        [self.touchedActionSpaces addObject: node.name];
-        self.lastTouchedName = node.name;
+    //Make sure the touches are only objects in this node
+    if (node.parent == self) {
+        //make sure it's not nil
+        if (node.name != nil) {
+            [self whenTouched:node];
+        }
     }
 }
 
@@ -142,13 +142,14 @@
     CGPoint location = [touch locationInNode:self];
     SKNode* node = [self nodeAtPoint:location];
     
-    if (node.name != self.lastTouchedName) {
-        //NSLog(@"%@", node.name);
-        if (node.name != nil) {
-            SKShapeNode* convertNode = (SKShapeNode*)node;
-            convertNode.fillColor = [UIColor redColor];
-            [self.touchedActionSpaces addObject: node.name];
-            self.lastTouchedName = node.name;
+    //Make sure the touches are only objects in this node
+    if (node.parent == self) {
+        //dont add node.names already entered
+        if (node.name != self.lastTouchedName) {
+            //make sure it's not nil
+            if (node.name != nil) {
+                [self whenTouched:node];
+            }
         }
     }
 }
@@ -156,20 +157,110 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
-    NSLog(@"%@", self.touchedActionSpaces);
-    
-    self.touchedActionSpaces.
-    
-    for (NSString* asName in self.touchedActionSpaces) {
-        if (asName == self.idOne) {
-            NSLog(@"Punch Action");
-        }else
+    /*
+     When touches ended is called it check how many objects are in the self.touchedActionSpaces.
+     With that number it decides which action method to call
+     **Each count needs a different method to call
+     Ex. if the count is 1 it has a different call than if the count were 2.
+     */
+    switch (self.touchedActionSpaces.count) {
+        case 1:
+            [self oneCountActions:self.touchedActionSpaces.copy];
+            break;
+        case 2:
+            [self twoCountActions:self.touchedActionSpaces.copy];
+            break;
+        case 3:
+            [self threeCountActions:self.touchedActionSpaces.copy];
+            break;
+        case 4:
+            //Make method for four count
+            break;
+        case 5:
+            //Make method for five count
+            break;
+        case 6:
+            //Make method for six count
+            break;
+        case 7:
+            //Make method for seven count
+            break;
+        case 8:
+            //Make method for eight count
+            break;
+        case 9:
+            //Make method for nine count
+            break;
+        default:
+            break;
     }
     
+    //Clears the selected Action Spaces added to the array and resets their fill color
     [self.touchedActionSpaces removeAllObjects];
     [self resetActionSpaces];
 }
 
+-(void) whenTouched: (SKNode*)node{
+    //change to shapeNode so you can change the fill color when touched
+    SKShapeNode* convertNode = (SKShapeNode*)node;
+    convertNode.fillColor = [UIColor redColor];
+    //Add name to array
+    [self.touchedActionSpaces addObject: node.name];
+    //set the lastTouchedName to the recent node.name
+    self.lastTouchedName = node.name;
+}
+
+////
+/*
+ These are the methods called based on the count of the Self.touchedActionSpaces Array
+ once inside the method it sets each index of the array to a variable so you know the order
+ Action Spaces were pressed (or slide over).
+ 
+ Once variables are set an if statment checks which Action Spaces were slected and in what order
+ based on that outcome it will execute the action you set for that specific set of Action Spaces 
+ and order.
+ 
+ In the twoCountActions Method below i have an example of ordering in one if-statment it check if 
+ five was selected first and the other checks if six was selected first and based on that it does a different action.
+*/
+-(void) oneCountActions: (NSArray*) actionsArray{
+    NSString* onlyTouchedSpace = [actionsArray objectAtIndex:0];
+    
+    //Tap the Action Space four
+    if (onlyTouchedSpace == self.idFour) {
+        NSLog(@"Back Dash");
+    //Tap the Action Space six
+    }else if(onlyTouchedSpace == self.idSix){
+        NSLog(@"Punch Action");
+    }
+}
+
+-(void) twoCountActions: (NSArray*) actionsArray{
+    NSString* firstTouchedSpace = [actionsArray objectAtIndex:0];
+    NSString* secondTouchedSpace = [actionsArray objectAtIndex:1];
+    
+    //Start by tapping Action Space five then sliding to Action Space Six
+    if (firstTouchedSpace == self.idFive && secondTouchedSpace == self.idSix) {
+        NSLog(@"Dash Punch Action");
+    //Start by tapping Action Space Six then sliding to Action Space Five
+    }else if (firstTouchedSpace == self.idSix && secondTouchedSpace == self.idFive){
+        NSLog(@"Punch Back Dash Action");
+    }
+}
+
+-(void) threeCountActions: (NSArray*) actionsArray{
+    NSString* firstTouchedSpace = [actionsArray objectAtIndex:0];
+    NSString* secondTouchedSpace = [actionsArray objectAtIndex:1];
+    NSString* thirdTouchedSpace = [actionsArray objectAtIndex:2];
+    
+    //Start by tapping Action Space four then sliding to Action Space one the sliding to Action Space Two
+    if (firstTouchedSpace == self.idFour && secondTouchedSpace == self.idOne && thirdTouchedSpace ==  self.idTwo) {
+        NSLog(@"Forward Air Dash");
+    }
+}
+////
+
+//When the touches are done this method resets the fill color back to nil
 -(void)resetActionSpaces{
     self.actionSpaceOne.fillColor = nil;
     self.actionSpaceTwo.fillColor = nil;
