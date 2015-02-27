@@ -11,7 +11,7 @@
 
 //Data
 @property SKScene* parentScene;
-@property NSArray* actionSpaceColors;
+@property UIColor* actionSpaceSelectedColor;
 @property float actionSpaceSize;
 @property NSMutableArray* touchedActionSpaces;
 @property NSString* lastTouchedName;
@@ -42,11 +42,11 @@
 
 @implementation ActionGrid
 
--(id)initWithScene: (SKScene*)scene actionSpaceColors: (NSArray*)asColors actionSpaceSize: (float)asSize
+-(id)initWithScene: (SKScene*)scene actionSpaceSelectedColor: (UIColor*)asSelectedColor actionSpaceSize: (float)asSize
 {
     if (self = [super init]) {
         self.parentScene = scene;
-        self.actionSpaceColors = asColors;
+        self.actionSpaceSelectedColor = asSelectedColor;
         self.actionSpaceSize = asSize;
         self.touchedActionSpaces = [[NSMutableArray alloc] init];
         
@@ -203,7 +203,7 @@
 -(void) whenTouched: (SKNode*)node{
     //change to shapeNode so you can change the fill color when touched
     SKShapeNode* convertNode = (SKShapeNode*)node;
-    convertNode.fillColor = [UIColor redColor];
+    convertNode.fillColor = self.actionSpaceSelectedColor;
     //Add name to array
     [self.touchedActionSpaces addObject: node.name];
     //set the lastTouchedName to the recent node.name
