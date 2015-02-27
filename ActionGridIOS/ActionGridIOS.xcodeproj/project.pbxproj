@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3619C53D1AA0BA27005D0E55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3619C53C1AA0BA27005D0E55 /* main.m */; };
+		3619C5401AA0BA27005D0E55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3619C53F1AA0BA27005D0E55 /* AppDelegate.m */; };
+		3619C5431AA0BA27005D0E55 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3619C5421AA0BA27005D0E55 /* GameScene.m */; };
+		3619C5451AA0BA27005D0E55 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3619C5441AA0BA27005D0E55 /* GameScene.sks */; };
+		3619C5481AA0BA27005D0E55 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3619C5471AA0BA27005D0E55 /* GameViewController.m */; };
+		3619C54B1AA0BA27005D0E55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3619C5491AA0BA27005D0E55 /* Main.storyboard */; };
+		3619C54D1AA0BA27005D0E55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3619C54C1AA0BA27005D0E55 /* Images.xcassets */; };
+		3619C5501AA0BA27005D0E55 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3619C54E1AA0BA27005D0E55 /* LaunchScreen.xib */; };
+		3619C55C1AA0BA27005D0E55 /* ActionGridIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3619C55B1AA0BA27005D0E55 /* ActionGridIOSTests.m */; };
+		3619C5681AA0BA9F005D0E55 /* ActionGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 3619C5671AA0BA9F005D0E55 /* ActionGrid.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3619C5561AA0BA27005D0E55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3619C52F1AA0BA27005D0E55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3619C5361AA0BA27005D0E55;
+			remoteInfo = ActionGridIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3619C5371AA0BA27005D0E55 /* ActionGridIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionGridIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3619C53B1AA0BA27005D0E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3619C53C1AA0BA27005D0E55 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3619C53E1AA0BA27005D0E55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3619C53F1AA0BA27005D0E55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3619C5411AA0BA27005D0E55 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		3619C5421AA0BA27005D0E55 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		3619C5441AA0BA27005D0E55 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		3619C5461AA0BA27005D0E55 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		3619C5471AA0BA27005D0E55 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		3619C54A1AA0BA27005D0E55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3619C54C1AA0BA27005D0E55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3619C54F1AA0BA27005D0E55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3619C5551AA0BA27005D0E55 /* ActionGridIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionGridIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3619C55A1AA0BA27005D0E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3619C55B1AA0BA27005D0E55 /* ActionGridIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionGridIOSTests.m; sourceTree = "<group>"; };
+		3619C5661AA0BA9F005D0E55 /* ActionGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionGrid.h; sourceTree = "<group>"; };
+		3619C5671AA0BA9F005D0E55 /* ActionGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionGrid.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3619C5341AA0BA27005D0E55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3619C5521AA0BA27005D0E55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3619C52E1AA0BA27005D0E55 = {
+			isa = PBXGroup;
+			children = (
+				3619C5391AA0BA27005D0E55 /* ActionGridIOS */,
+				3619C5581AA0BA27005D0E55 /* ActionGridIOSTests */,
+				3619C5381AA0BA27005D0E55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3619C5381AA0BA27005D0E55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3619C5371AA0BA27005D0E55 /* ActionGridIOS.app */,
+				3619C5551AA0BA27005D0E55 /* ActionGridIOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3619C5391AA0BA27005D0E55 /* ActionGridIOS */ = {
+			isa = PBXGroup;
+			children = (
+				3619C5651AA0BA56005D0E55 /* Action Grid */,
+				3619C53E1AA0BA27005D0E55 /* AppDelegate.h */,
+				3619C53F1AA0BA27005D0E55 /* AppDelegate.m */,
+				3619C5411AA0BA27005D0E55 /* GameScene.h */,
+				3619C5421AA0BA27005D0E55 /* GameScene.m */,
+				3619C5441AA0BA27005D0E55 /* GameScene.sks */,
+				3619C5461AA0BA27005D0E55 /* GameViewController.h */,
+				3619C5471AA0BA27005D0E55 /* GameViewController.m */,
+				3619C5491AA0BA27005D0E55 /* Main.storyboard */,
+				3619C54C1AA0BA27005D0E55 /* Images.xcassets */,
+				3619C54E1AA0BA27005D0E55 /* LaunchScreen.xib */,
+				3619C53A1AA0BA27005D0E55 /* Supporting Files */,
+			);
+			path = ActionGridIOS;
+			sourceTree = "<group>";
+		};
+		3619C53A1AA0BA27005D0E55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3619C53B1AA0BA27005D0E55 /* Info.plist */,
+				3619C53C1AA0BA27005D0E55 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3619C5581AA0BA27005D0E55 /* ActionGridIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				3619C55B1AA0BA27005D0E55 /* ActionGridIOSTests.m */,
+				3619C5591AA0BA27005D0E55 /* Supporting Files */,
+			);
+			path = ActionGridIOSTests;
+			sourceTree = "<group>";
+		};
+		3619C5591AA0BA27005D0E55 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3619C55A1AA0BA27005D0E55 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3619C5651AA0BA56005D0E55 /* Action Grid */ = {
+			isa = PBXGroup;
+			children = (
+				3619C5661AA0BA9F005D0E55 /* ActionGrid.h */,
+				3619C5671AA0BA9F005D0E55 /* ActionGrid.m */,
+			);
+			name = "Action Grid";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3619C5361AA0BA27005D0E55 /* ActionGridIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3619C55F1AA0BA27005D0E55 /* Build configuration list for PBXNativeTarget "ActionGridIOS" */;
+			buildPhases = (
+				3619C5331AA0BA27005D0E55 /* Sources */,
+				3619C5341AA0BA27005D0E55 /* Frameworks */,
+				3619C5351AA0BA27005D0E55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActionGridIOS;
+			productName = ActionGridIOS;
+			productReference = 3619C5371AA0BA27005D0E55 /* ActionGridIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3619C5541AA0BA27005D0E55 /* ActionGridIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3619C5621AA0BA27005D0E55 /* Build configuration list for PBXNativeTarget "ActionGridIOSTests" */;
+			buildPhases = (
+				3619C5511AA0BA27005D0E55 /* Sources */,
+				3619C5521AA0BA27005D0E55 /* Frameworks */,
+				3619C5531AA0BA27005D0E55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3619C5571AA0BA27005D0E55 /* PBXTargetDependency */,
+			);
+			name = ActionGridIOSTests;
+			productName = ActionGridIOSTests;
+			productReference = 3619C5551AA0BA27005D0E55 /* ActionGridIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3619C52F1AA0BA27005D0E55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Joshua;
+				TargetAttributes = {
+					3619C5361AA0BA27005D0E55 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					3619C5541AA0BA27005D0E55 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 3619C5361AA0BA27005D0E55;
+					};
+				};
+			};
+			buildConfigurationList = 3619C5321AA0BA27005D0E55 /* Build configuration list for PBXProject "ActionGridIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3619C52E1AA0BA27005D0E55;
+			productRefGroup = 3619C5381AA0BA27005D0E55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3619C5361AA0BA27005D0E55 /* ActionGridIOS */,
+				3619C5541AA0BA27005D0E55 /* ActionGridIOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3619C5351AA0BA27005D0E55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3619C5501AA0BA27005D0E55 /* LaunchScreen.xib in Resources */,
+				3619C54D1AA0BA27005D0E55 /* Images.xcassets in Resources */,
+				3619C5451AA0BA27005D0E55 /* GameScene.sks in Resources */,
+				3619C54B1AA0BA27005D0E55 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3619C5531AA0BA27005D0E55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3619C5331AA0BA27005D0E55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3619C5481AA0BA27005D0E55 /* GameViewController.m in Sources */,
+				3619C5681AA0BA9F005D0E55 /* ActionGrid.m in Sources */,
+				3619C5401AA0BA27005D0E55 /* AppDelegate.m in Sources */,
+				3619C5431AA0BA27005D0E55 /* GameScene.m in Sources */,
+				3619C53D1AA0BA27005D0E55 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3619C5511AA0BA27005D0E55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3619C55C1AA0BA27005D0E55 /* ActionGridIOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3619C5571AA0BA27005D0E55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3619C5361AA0BA27005D0E55 /* ActionGridIOS */;
+			targetProxy = 3619C5561AA0BA27005D0E55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3619C5491AA0BA27005D0E55 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3619C54A1AA0BA27005D0E55 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3619C54E1AA0BA27005D0E55 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3619C54F1AA0BA27005D0E55 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3619C55D1AA0BA27005D0E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3619C55E1AA0BA27005D0E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3619C5601AA0BA27005D0E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ActionGridIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3619C5611AA0BA27005D0E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ActionGridIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3619C5631AA0BA27005D0E55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ActionGridIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActionGridIOS.app/ActionGridIOS";
+			};
+			name = Debug;
+		};
+		3619C5641AA0BA27005D0E55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ActionGridIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActionGridIOS.app/ActionGridIOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3619C5321AA0BA27005D0E55 /* Build configuration list for PBXProject "ActionGridIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3619C55D1AA0BA27005D0E55 /* Debug */,
+				3619C55E1AA0BA27005D0E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3619C55F1AA0BA27005D0E55 /* Build configuration list for PBXNativeTarget "ActionGridIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3619C5601AA0BA27005D0E55 /* Debug */,
+				3619C5611AA0BA27005D0E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3619C5621AA0BA27005D0E55 /* Build configuration list for PBXNativeTarget "ActionGridIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3619C5631AA0BA27005D0E55 /* Debug */,
+				3619C5641AA0BA27005D0E55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3619C52F1AA0BA27005D0E55 /* Project object */;
+}
