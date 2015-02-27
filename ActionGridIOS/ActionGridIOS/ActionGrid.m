@@ -214,7 +214,7 @@
 /*
  These are the methods called based on the count of the Self.touchedActionSpaces Array
  once inside the method it sets each index of the array to a variable so you know the order
- Action Spaces were pressed (or slide over).
+ Action Spaces were selected.
  
  Once variables are set an if statment checks which Action Spaces were slected and in what order
  based on that outcome it will execute the action you set for that specific set of Action Spaces 
@@ -257,6 +257,24 @@
     if (firstTouchedSpace == self.idFour && secondTouchedSpace == self.idOne && thirdTouchedSpace ==  self.idTwo) {
         NSLog(@"Forward Air Dash");
     }
+}
+
+-(void) fourCountActions: (NSArray*) actionsArray{
+}
+
+-(void) fiveCountActions: (NSArray*) actionsArray{
+}
+
+-(void) sixCountActions: (NSArray*) actionsArray{
+}
+
+-(void) sevenCountActions: (NSArray*) actionsArray{
+}
+
+-(void) eightCountActions: (NSArray*) actionsArray{
+}
+
+-(void) nineCountActions: (NSArray*) actionsArray{
 }
 ////
 
