@@ -13,6 +13,8 @@
 @property SKScene* parentScene;
 @property NSArray* actionSpaceColors;
 @property float actionSpaceSize;
+@property NSMutableArray* touchedActionSpaces;
+@property NSString* lastTouchedName;
 
 //Action Spaces
 @property SKShapeNode* actionSpaceOne;
@@ -46,6 +48,7 @@
         self.parentScene = scene;
         self.actionSpaceColors = asColors;
         self.actionSpaceSize = asSize;
+        self.touchedActionSpaces = [[NSMutableArray alloc] init];
         
         self.idOne = @"1";
         self.idTwo = @"2";
@@ -110,7 +113,72 @@
         self.actionSpaceNine.lineWidth = 2.0f;
         self.actionSpaceNine.name = self.idNine;
         [self addChild:self.actionSpaceNine];
+        
+        [self setUserInteractionEnabled:true];
     }
     return self;
 };
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    
+    UITouch* touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode* node = [self nodeAtPoint:location];
+    
+    //NSLog(@"%@", node.name);
+    if (node.name != nil) {
+        SKShapeNode* convertNode = (SKShapeNode*)node;
+        convertNode.fillColor = [UIColor redColor];
+        [self.touchedActionSpaces addObject: node.name];
+        self.lastTouchedName = node.name;
+    }
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesEnded:touches withEvent:event];
+    
+    UITouch* touch = [touches anyObject];
+    CGPoint location = [touch locationInNode:self];
+    SKNode* node = [self nodeAtPoint:location];
+    
+    if (node.name != self.lastTouchedName) {
+        //NSLog(@"%@", node.name);
+        if (node.name != nil) {
+            SKShapeNode* convertNode = (SKShapeNode*)node;
+            convertNode.fillColor = [UIColor redColor];
+            [self.touchedActionSpaces addObject: node.name];
+            self.lastTouchedName = node.name;
+        }
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [super touchesEnded:touches withEvent:event];
+    
+    NSLog(@"%@", self.touchedActionSpaces);
+    
+    self.touchedActionSpaces.
+    
+    for (NSString* asName in self.touchedActionSpaces) {
+        if (asName == self.idOne) {
+            NSLog(@"Punch Action");
+        }else
+    }
+    
+    [self.touchedActionSpaces removeAllObjects];
+    [self resetActionSpaces];
+}
+
+-(void)resetActionSpaces{
+    self.actionSpaceOne.fillColor = nil;
+    self.actionSpaceTwo.fillColor = nil;
+    self.actionSpaceThree.fillColor = nil;
+    self.actionSpaceFour.fillColor = nil;
+    self.actionSpaceFive.fillColor = nil;
+    self.actionSpaceSix.fillColor = nil;
+    self.actionSpaceSeven.fillColor = nil;
+    self.actionSpaceEight.fillColor = nil;
+    self.actionSpaceNine.fillColor = nil;
+}
 @end
