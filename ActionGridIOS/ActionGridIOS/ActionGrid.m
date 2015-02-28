@@ -12,7 +12,11 @@
 //Data
 @property SKScene* parentScene;
 @property UIColor* actionSpaceSelectedColor;
+@property UIColor* actionSpaceBorderColor;
+    //For Square
 @property float actionSpaceSize;
+    //For Circle
+@property float actionSpaceRadius;
 @property NSMutableArray* touchedActionSpaces;
 @property NSString* lastTouchedName;
 
@@ -42,11 +46,12 @@
 
 @implementation ActionGrid
 
--(id)initWithScene: (SKScene*)scene actionSpaceSelectedColor: (UIColor*)asSelectedColor actionSpaceSize: (float)asSize
+-(id)initWithScene: (SKScene*)scene actionSpaceSelectedColor: (UIColor*)asSelectedColor actionSpaceBorderColor: (UIColor*)asBorderColor actionSpaceSize: (float)asSize
 {
     if (self = [super init]) {
         self.parentScene = scene;
         self.actionSpaceSelectedColor = asSelectedColor;
+        self.actionSpaceBorderColor = asBorderColor;
         self.actionSpaceSize = asSize;
         self.touchedActionSpaces = [[NSMutableArray alloc] init];
         
@@ -63,54 +68,63 @@
         self.actionSpaceOne = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceOne.position = CGPointMake(-(self.actionSpaceSize), self.actionSpaceSize);
         self.actionSpaceOne.lineWidth = 2.0f;
+        self.actionSpaceOne.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceOne.name = self.idOne;
         [self addChild:self.actionSpaceOne];
         
         self.actionSpaceTwo = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceTwo.position = CGPointMake(0, self.actionSpaceSize);
         self.actionSpaceTwo.lineWidth = 2.0f;
+        self.actionSpaceTwo.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceTwo.name = self.idTwo;
         [self addChild:self.actionSpaceTwo];
         
         self.actionSpaceThree = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceThree.position = CGPointMake(self.actionSpaceSize, self.actionSpaceSize);
         self.actionSpaceThree.lineWidth = 2.0f;
+        self.actionSpaceThree.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceThree.name = self.idThree;
         [self addChild:self.actionSpaceThree];
         
         self.actionSpaceFour = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceFour.position = CGPointMake(-(self.actionSpaceSize), 0);
         self.actionSpaceFour.lineWidth = 2.0f;
+        self.actionSpaceFour.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceFour.name = self.idFour;
         [self addChild:self.actionSpaceFour];
         
         self.actionSpaceFive = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceFive.position = CGPointMake(0, 0);
         self.actionSpaceFive.lineWidth = 2.0f;
+        self.actionSpaceFive.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceFive.name = self.idFive;
         [self addChild:self.actionSpaceFive];
         
         self.actionSpaceSix = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceSix.position = CGPointMake(self.actionSpaceSize, 0);
         self.actionSpaceSix.lineWidth = 2.0f;
+        self.actionSpaceSix.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceSix.name = self.idSix;
         [self addChild:self.actionSpaceSix];
         
         self.actionSpaceSeven = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceSeven.position = CGPointMake(-(self.actionSpaceSize), -(self.actionSpaceSize));
         self.actionSpaceSeven.lineWidth = 2.0f;
+        self.actionSpaceSeven.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceSeven.name = self.idSeven;
         [self addChild:self.actionSpaceSeven];
         
         self.actionSpaceEight = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceEight.position = CGPointMake(0, -(self.actionSpaceSize));
         self.actionSpaceEight.lineWidth = 2.0f;
+        self.actionSpaceEight.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceEight.name = self.idEight;
         [self addChild:self.actionSpaceEight];
         
         self.actionSpaceNine = [SKShapeNode shapeNodeWithRectOfSize:CGSizeMake(self.actionSpaceSize, self.actionSpaceSize)];
         self.actionSpaceNine.position = CGPointMake(self.actionSpaceSize, -(self.actionSpaceSize));
         self.actionSpaceNine.lineWidth = 2.0f;
+        self.actionSpaceNine.strokeColor = self.actionSpaceBorderColor;
         self.actionSpaceNine.name = self.idNine;
         [self addChild:self.actionSpaceNine];
         
@@ -118,6 +132,93 @@
     }
     return self;
 };
+
+-(id)initWithSceneForCircleStyle: (SKScene*)scene actionSpaceSelectedColor: (UIColor*)asSelectedColor actionSpaceBorderColor: (UIColor*)asBorderColor actionSpaceRadius: (float)asRadius
+{
+    if (self = [super init]) {
+        self.parentScene = scene;
+        self.actionSpaceSelectedColor = asSelectedColor;
+        self.actionSpaceBorderColor = asBorderColor;
+        self.actionSpaceRadius = asRadius;
+        self.touchedActionSpaces = [[NSMutableArray alloc] init];
+        
+        self.idOne = @"1";
+        self.idTwo = @"2";
+        self.idThree = @"3";
+        self.idFour = @"4";
+        self.idFive = @"5";
+        self.idSix = @"6";
+        self.idSeven = @"7";
+        self.idEight = @"8";
+        self.idNine = @"9";
+        
+        self.actionSpaceOne = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceOne.position = CGPointMake(-(self.actionSpaceRadius*2 + 10.0f), self.actionSpaceRadius*2 + 10.0f);
+        self.actionSpaceOne.lineWidth = 2.0f;
+        self.actionSpaceOne.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceOne.name = self.idOne;
+        [self addChild:self.actionSpaceOne];
+        
+        self.actionSpaceTwo = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceTwo.position = CGPointMake(0, self.actionSpaceRadius*2 + 10.0f);
+        self.actionSpaceTwo.lineWidth = 2.0f;
+        self.actionSpaceTwo.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceTwo.name = self.idTwo;
+        [self addChild:self.actionSpaceTwo];
+        
+        self.actionSpaceThree = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceThree.position = CGPointMake(self.actionSpaceRadius*2 + 10.0f, self.actionSpaceRadius*2 + 10.0f);
+        self.actionSpaceThree.lineWidth = 2.0f;
+        self.actionSpaceThree.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceThree.name = self.idThree;
+        [self addChild:self.actionSpaceThree];
+        
+        self.actionSpaceFour = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceFour.position = CGPointMake(-(self.actionSpaceRadius*2 + 10.0f), 0);
+        self.actionSpaceFour.lineWidth = 2.0f;
+        self.actionSpaceFour.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceFour.name = self.idFour;
+        [self addChild:self.actionSpaceFour];
+        
+        self.actionSpaceFive = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceFive.position = CGPointMake(0, 0);
+        self.actionSpaceFive.lineWidth = 2.0f;
+        self.actionSpaceFive.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceFive.name = self.idFive;
+        [self addChild:self.actionSpaceFive];
+        
+        self.actionSpaceSix = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceSix.position = CGPointMake(self.actionSpaceRadius*2 + 10.0f, 0);
+        self.actionSpaceSix.lineWidth = 2.0f;
+        self.actionSpaceSix.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceSix.name = self.idSix;
+        [self addChild:self.actionSpaceSix];
+        
+        self.actionSpaceSeven = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceSeven.position = CGPointMake(-(self.actionSpaceRadius*2 + 10.0f), -(self.actionSpaceRadius*2 + 10.0f));
+        self.actionSpaceSeven.lineWidth = 2.0f;
+        self.actionSpaceSeven.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceSeven.name = self.idSeven;
+        [self addChild:self.actionSpaceSeven];
+        
+        self.actionSpaceEight = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceEight.position = CGPointMake(0, -(self.actionSpaceRadius*2 + 10.0f));
+        self.actionSpaceEight.lineWidth = 2.0f;
+        self.actionSpaceEight.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceEight.name = self.idEight;
+        [self addChild:self.actionSpaceEight];
+        
+        self.actionSpaceNine = [SKShapeNode shapeNodeWithCircleOfRadius:self.actionSpaceRadius];
+        self.actionSpaceNine.position = CGPointMake(self.actionSpaceRadius*2 + 10.0f, -(self.actionSpaceRadius*2 + 10.0f));
+        self.actionSpaceNine.lineWidth = 2.0f;
+        self.actionSpaceNine.strokeColor = self.actionSpaceBorderColor;
+        self.actionSpaceNine.name = self.idNine;
+        [self addChild:self.actionSpaceNine];
+        
+        [self setUserInteractionEnabled:true];
+    }
+    return self;
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];

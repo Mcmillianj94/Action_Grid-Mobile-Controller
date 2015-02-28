@@ -12,9 +12,13 @@
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
-    ActionGrid* actionGrid = [[ActionGrid alloc] initWithScene:self actionSpaceSelectedColor: [UIColor blueColor]  actionSpaceSize:50.0f];
-    actionGrid.position = CGPointMake(self.size.width/2, self.size.height/2);
+    ActionGrid* actionGrid = [[ActionGrid alloc] initWithScene:self actionSpaceSelectedColor: [UIColor blueColor]  actionSpaceBorderColor: [UIColor blackColor] actionSpaceSize:50.0f];
+    actionGrid.position = CGPointMake(self.size.width/4, self.size.height/2);
     [self addChild:actionGrid];
+    
+    ActionGrid* circleGrid = [[ActionGrid alloc] initWithSceneForCircleStyle:self actionSpaceSelectedColor:[UIColor redColor] actionSpaceBorderColor:[UIColor whiteColor] actionSpaceRadius:20.0f];
+    circleGrid.position = CGPointMake(self.size.width/2, self.size.height/2);
+    [self addChild:circleGrid];
     
 }
 

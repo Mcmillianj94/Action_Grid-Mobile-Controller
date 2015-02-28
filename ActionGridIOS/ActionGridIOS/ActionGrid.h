@@ -9,5 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface ActionGrid : SKSpriteNode
--(id)initWithScene: (SKScene*)scene actionSpaceSelectedColor: (UIColor*)asSelectedColor  actionSpaceSize: (float)asSize;
+-(id)initWithScene: (SKScene*)scene actionSpaceSelectedColor: (UIColor*)asSelectedColor actionSpaceBorderColor: (UIColor*)asBorderColor actionSpaceSize: (float)asSize;
+
+-(id)initWithSceneForCircleStyle: (SKScene*)scene actionSpaceSelectedColor: (UIColor*)asSelectedColor actionSpaceBorderColor: (UIColor*)asBorderColor actionSpaceRadius: (float)asRadius;
 @end
